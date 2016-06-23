@@ -8,10 +8,10 @@ namespace BotenVerhuur
 {
     public class Water
     {
-        private int ID { get; }
-        private string naam { get; }
-        private double prijs { get; }
-        private bool motorNodig { get; }
+        public int ID { get; private set; }
+        public string naam { get; private set; }
+        public double prijs { get; private set; }
+        public bool motorNodig { get; private set; }
 
         public Water(int ID, string naam, double prijs, bool motorNodig)
         {
@@ -19,6 +19,11 @@ namespace BotenVerhuur
             this.naam = naam;
             this.prijs = prijs;
             this.motorNodig = motorNodig;
+        }
+
+        public override string ToString()
+        {
+            return naam;
         }
     }
 }

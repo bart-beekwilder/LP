@@ -8,10 +8,10 @@ namespace BotenVerhuur
 {
     public class Huurder
     {
-        private int ID { get; }
-        private string naam { get; }
-        private string email { get; }
-        private List<Huurcontract> huurcontracten { get; } 
+        public int ID { get; private set; }
+        public string naam { get; private set; }
+        public string email { get; }
+        public List<Huurcontract> huurcontracten { get; private set; } 
 
         public Huurder(int ID, string naam, string email)
         {

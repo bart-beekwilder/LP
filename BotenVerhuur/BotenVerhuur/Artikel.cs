@@ -8,15 +8,20 @@ namespace BotenVerhuur
 {
     public class Artikel
     {
-        private int ID { get; }
-        private string naam { get; }
-        private double prijs { get; }
+        public int ID { get; private set; }
+        public string naam { get; private set; }
+        public double prijs { get; private set; }
 
         public Artikel(int ID, string naam, double prijs)
         {
             this.ID = ID;
             this.naam = naam;
             this.prijs = prijs;
+        }
+
+        public override string ToString()
+        {
+            return naam;
         }
     }
 }

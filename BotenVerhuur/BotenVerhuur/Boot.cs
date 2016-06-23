@@ -8,10 +8,10 @@ namespace BotenVerhuur
 {
     public class Boot
     {
-        private int ID { get; }
-        private string naam { get; }
-        private double prijs { get; }
-        private int tankInhoud { get; }
+        public int ID { get; private set; }
+        public string naam { get; private set; }
+        public double prijs { get; private set; }
+        public int tankInhoud { get; private set; }
 
         public Boot(int ID, string naam, double prijs, int tankInhoud)
         {
@@ -26,6 +26,11 @@ namespace BotenVerhuur
             int actieradius;
             actieradius = tankInhoud*15;
             return actieradius;
+        }
+
+        public override string ToString()
+        {
+            return naam;
         }
     }
 }

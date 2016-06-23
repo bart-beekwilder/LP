@@ -8,16 +8,24 @@ namespace BotenVerhuur
 {
     public class Huurcontract
     {
-        private int ID { get; }
-        private DateTime StartDate { get; }
-        private DateTime EndDate { get; }
-        private Huurder huurder;
-        private List<Artikel> artikelen;
-        private List<Water> wateren;
-        private List<Boot> boten;  
+        public int ID { get; private set; }
+        public DateTime StartDate { get; private set; }
+        public  DateTime EndDate { get; private set; }
+        public  Huurder huurder { get; private set; }
+        public  List<Artikel> artikelen { get; private set; }
+        public  List<Water> wateren { get; private set; }
+        public  List<Boot> boten { get; private set; }
 
         public Huurcontract(Huurder huurder)
         {
+            this.huurder = huurder;
+            artikelen = new List<Artikel>();
+            wateren = new List<Water>();
+            boten = new List<Boot>();
+        }
+        public Huurcontract(int ID, Huurder huurder)
+        {
+            this.ID = ID;
             this.huurder = huurder;
             artikelen = new List<Artikel>();
             wateren = new List<Water>();
